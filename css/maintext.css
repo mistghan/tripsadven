@@ -12,3 +12,19 @@ p{
   color: black;
   font-size: 18px;
 }
+.content {
+  /* These rules create an artificially confined space, so we get 
+     a scrollbar that we can hide. They are not part of the hiding itself. */
+
+  border: 0px solid;
+  padding: .5em;
+  
+  white-space: pre-wrap;
+  height: 5em;
+  overflow-y: scroll;
+}
+
+.content::-webkit-scrollbar { 
+  /* This is the magic bit */
+  display: none;
+}
