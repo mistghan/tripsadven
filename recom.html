@@ -1,5 +1,8 @@
 ﻿<html>
 	<head>
+		<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+		<script type="text/javascript" src="js/progressbar.js"></script>
+		<link href="skins/jquery-ui-like/progressbar.css" rel="stylesheet" type="text/css" />
 		<link href="css/maintext.css" rel="stylesheet" type="text/css" media="all" />
 	<title>Your Trip Choices</title>
 	<style>
@@ -22,9 +25,25 @@
 		<tr> 
 			<td colspan="5" border="0">
 			<div id="container">
+				<div id="jquery-ui-like">
 			<iframe src="callrcmV2.html"></iframe>
+				</div>
 			</div>
 			</td>
 		</tr>
+	<script>
+	
+	var numberOfImages = $('.img img').length,
+		numberOfLoaded = 0,
+		step = 100 / numberOfImages;
+	
+	$('.img img').each( function (i, item) {
+		$(item).load( function () {
+			numberOfLoaded++;
+			progressBar(step * numberOfLoaded, $('#progressBar'));
+		});
+	});
+
+	</script>	
 	</body>
 </html>
