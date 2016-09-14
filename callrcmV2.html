@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
-	<script type="text/javascript" src="js/progressbar.js"></script>
-	<link href="skins/jquery-ui-like/progressbar.css" rel="stylesheet" type="text/css" />
 	<link href="css/maintext.css" rel="stylesheet" type="text/css" media="all" />
 </head>
 <body>
 <div class="entry">
-<div class="jquery-ui-like">
 <img src="img/rajaampat.jpg" alt="Raja Ampat" width="400">
 	<h1>Kepulauan Raja Ampat</h1>
 	<p>Kepulauan Raja Ampat merupakan kepulauan yang berada di barat pulau Papua di provinsi Papua Barat, tepatnya di bagian kepala burung Papua. 
@@ -95,20 +91,5 @@
 	<p>Goa Gong diklaim sebagai goa terindah di Asia Tenggara. Di dalam gua ini Anda dapat menyaksikan berbagai macam tonjolan batuan (stalaktit/stalakmit) yang sangat menarik dan proses terjadinya secara alami.
 	</p><br><br>
 </div>
-</div>
-<script>
-	
-	var numberOfImages = $('.img img').length,
-		numberOfLoaded = 0,
-		step = 100 / numberOfImages;
-	
-	$('.img img').each( function (i, item) {
-		$(item).load( function () {
-			numberOfLoaded++;
-			progressBar(step * numberOfLoaded, $('#progressBar'));
-		});
-	});
-
-</script>
 </body>
 </html>
