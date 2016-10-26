@@ -1,0 +1,58 @@
+<html>
+	<head>
+		<title>kalkulator</title>
+	</head>
+	
+	<body>
+		<form onsubmit="return false">
+		<table border="0">
+			<tr>
+			<td>Nama </td> <td><input type="text" id="nama" /></td> 
+			</tr>
+			<tr>
+			<td>NRP </td> <td><input type="text" id="nrp" /></td> 
+			</tr>
+			<tr>
+			<td>Tugas </td> <td><input type="string" id="tgs" /></td> 
+			</tr>
+			<tr>
+			<td>UTS </td> <td><input type="string" id="uts" /></td> 
+			</tr>
+			<tr>
+			<td>UAS </td> <td><input type="string" id="uas" /></td> 
+			</tr>
+		</table>
+		</form>
+			<br>
+			<button id="tombol_form">Submit</button>
+		<br>
+		<br>
+			
+			<span id="hasil"></span> <br><br>
+			
+			
+			<button id="tombol_ok">OK</button> <br><br>
+			
+			
+			<span id="nilai"></span> 
+		<script>
+		document.getElementById("tombol_form").addEventListener("click", tampilkan_konfirmasi);
+		
+		function tampilkan_konfirmasi() {
+			var nama_form=document.getElementById("nama").value
+			var nrp_form=document.getElementById("nrp").value;
+			document.getElementById("hasil").innerHTML="apakah benar nama anda " + nama_form + " dengan nrp " + nrp_form + " jika benar silahkan klik OK di bawah ini";
+		};
+		
+		document.getElementById("tombol_ok").addEventListener("click", tampilkan_nilai);
+		function tampilkan_nilai() {
+			var tgs_form=document.getElementById("tgs").value;
+			var uts_form=document.getElementById("uts").value;
+			var uas_form=document.getElementById("uas").value;
+			document.getElementById("nilai").innerHTML="Nilai akhir anda " + ((tgs_form * 0.3) + (uts_form * 0.3) + (uas_form * 0.4));
+		
+		};	
+		</script>
+		
+	</body>
+</html>
