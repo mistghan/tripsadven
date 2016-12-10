@@ -1,0 +1,80 @@
+<html>
+	<head>
+		<title>Tugas</title>
+	</head>
+	
+	<body>
+		<form onsubmit="return false">
+		<table border="0">
+			<tr>
+			<td>NIM </td><td>:</td> <td><input type="text" id="nim" /></td> 
+			</tr>
+			<tr>
+			<td>Nama </td><td>:</td> <td><input type="text" id="nama" /></td> 
+			</tr>
+			<tr>
+			<td>Tugas </td><td>:</td> <td><input id="tgs" /></td> 
+			</tr>
+			<tr>
+			<td>UTS </td><td>:</td> <td><input id="uts" /></td> 
+			</tr>
+			<tr>
+			<td>UAS </td><td>:</td> <td><input id="uas" /></td> 
+			</tr>
+		</table>
+		</form>
+			<br>
+			<button onclick="tombol_form()">Proses</button>
+		<br>
+		<br>
+			
+			<span id="hasil"></span> <br><br>
+		
+		<script>
+				
+		function tombol_form() {
+			var nim_form=document.getElementById("nim").value;
+			var nama_form=document.getElementById("nama").value;
+			var tgs_form=document.getElementById("tgs").value;
+			var uts_form=document.getElementById("uts").value;
+			var uas_form=document.getElementById("uas").value;
+			var akhir_form=((tgs_form * 0.3) + (uts_form * 0.3) + (uas_form * 0.4));
+			var huruf_form=null;
+			var ket_form=null;
+			
+			if (akhir_form >= 90) {
+				huruf_form ="A";
+			} else if (akhir_form >= 80) {
+				huruf_form ="A-";
+			} else if (akhir_form >= 70) {
+				huruf_form ="B+";
+			} else if (akhir_form >= 60) {
+				huruf_form ="B";
+			} else if (akhir_form >= 50) {
+				huruf_form ="B-";
+			} else if (akhir_form >= 40) {
+				huruf_form ="C+";
+			} else if (akhir_form >= 30) {
+				huruf_form ="C";
+			} else if (akhir_form >= 20) {
+				huruf_form ="C-";
+			} else if (akhir_form >= 10) {
+				huruf_form ="D";
+			} else {
+				huruf_form ="E";
+			}
+			
+			if (akhir_form >= 60) {
+				ket_form ="Lulus";
+			} else {
+				ket_form ="Gagal";
+			}
+			
+			document.getElementById("hasil").innerHTML="NIM &nbsp;&nbsp;&nbsp; : " + nim_form + "<br>" + "Nama &nbsp;&nbsp; : " + nama_form + "<br>" + "Akhir &nbsp;&nbsp; : " + akhir_form + "<br>" + "Huruf &nbsp;&nbsp; : " + huruf_form + "<br>" + "Ket &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : " + ket_form + "<br>";
+		};
+		
+			
+		</script>
+		
+	</body>
+</html>

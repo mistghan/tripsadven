@@ -1,0 +1,72 @@
+<html>
+	<head>
+		<title>kalkulator</title>
+	</head>
+	<body>
+		<form onsubmit="return false">
+		<table border="0">
+			<tr>
+			<td>Nama </td> <td><input type="text" id="nama" /></td>
+			</tr>
+			<td>NRP </td> <td><input type="text" id="nrp" /></td>
+			</tr>
+		</table>
+		
+			<br>
+			<button onclick="tombol_form()">Submit</button>
+		</form>
+		
+		<br>
+			
+			<span id="hasil"></span> <br><br>
+		
+		<form id="nilai_na" onsubmit="return false">
+		<table border="0">
+			<td>Tugas </td> <td><input type="string" id="tgs" /></td>
+			</tr>
+			<td>UTS </td> <td><input type="string" id="uts" /></td>
+			</tr>
+			<td>UAS </td> <td><input type="string" id="uas" /></td>
+			</tr>	
+		</table>
+	
+			<br>
+			<button onclick="tombol_ok()">OK</button> <br><br>
+		</form>
+		
+			<span id="nilai"></span> 
+		
+		<script>
+		document.getElementById("nilai_na").style.display="none";
+		
+		function tombol_form() {
+			var nama_form=document.getElementById("nama").value;
+			var nrp_form=document.getElementById("nrp").value;
+			
+			if (nama_form =="" || nrp_form =="") {
+			alert("ERROR! Nama dan NRP harus diisi!");
+			return false ;
+			} 
+			
+			document.getElementById("hasil").innerHTML="apakah benar nama anda " + "<u><i>" + nama_form + "</i></u>" + " dengan nrp " + "<u><i>" + nrp_form + "</i></u>" + "<br>" + " masukkan nilai anda di bawah ini";
+			document.getElementById("nilai_na").style.display="block";
+		};
+		
+		function tombol_ok() {
+			var tgs_form=document.getElementById("tgs").value;
+			var uts_form=document.getElementById("uts").value;
+			var uas_form=document.getElementById("uas").value;
+			var akhir_form=((tgs_form * 0.3) + (uts_form * 0.3) + (uas_form * 0.4));
+			
+			if (tgs_form =="" || uts_form =="" || uas_form =="") {
+			alert("ERROR! Semua nilai harus diisi!");
+			return false ;
+			}
+			
+			document.getElementById("nilai").innerHTML="<b>" + "Nilai akhir anda " + "</b>" + "<br>" + "<br>" + "<h1><u>" + akhir_form + "<h1><u>" ;
+		};	
+		</script>
+
+		
+	</body>
+</html>
